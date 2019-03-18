@@ -13,7 +13,7 @@ pclass=[]
 age=[]
 
 X=[]
-l=open("/home/saishashank/kaggle/train.csv")
+l=open(r"D:\Project\kaggle-master\train.csv")
 for i in l:
 	i=i.split(",")
 
@@ -58,7 +58,7 @@ clf = GaussianNB()
 #X=np.array[[(x[i],y[i]) for i in range(len(x)) for j in range(len(y))] ]
 clf.fit(X,sur)
 X=[]
-l=open("/home/saishashank/kaggle/test.csv")
+l=open(r"D:\Project\kaggle-master\test.csv")
 for i in l:
 	i=i.split(",")
 
@@ -95,7 +95,7 @@ for i in l:
 		#X1.reshape(-1,1)
 		#clf.predict([X1])
 		#print("done")
-l=open("/home/saishashank/kaggle/result5.csv","w")
+l=open(r"D:\Project\kaggle-master\result20.csv","w", newline='')
 #print(len(X))
 i=0
 writer = csv.writer(l)
