@@ -5,7 +5,7 @@ Created on Mon Mar 18 12:33:25 2019
 @author: ons1kor
 """
 count=0
-l=open(r"D:\Project\kaggle-master\result25.csv","r")
+l=open("/home/saishashank/kaggle/result25.csv","r")
 for k in l:
     k=k.split(",")
     print(type(k[1]))

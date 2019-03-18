@@ -7,10 +7,8 @@ Created on Mon Mar 18 15:09:08 2019
 
 from sklearn.svm import LinearSVC
 from sklearn.datasets import make_classification
-
-LinearSVC(C=1.0, class_weight=None, dual=True, fit_intercept=True,
-     intercept_scaling=1, loss='squared_hinge', max_iter=10000,
-     multi_class='ovr', penalty='l2', random_state=0, tol=1e-05, verbose=0)
+import csv
+from sklearn import svm
 idd=[]
 sur=[]
 pclass=[]
@@ -18,7 +16,7 @@ pclass=[]
 age=[]
 
 X=[]
-l=open(r"D:\Project\kaggle-master\train.csv")
+l=open("/home/saishashank/kaggle/train.csv")
 for i in l:
 	i=i.split(",")
 
@@ -51,7 +49,8 @@ for i in l:
 		sur.append(int(i[1]))
 		#pclass.append(int(i[2]))
 #print(x)
-clf = LinearSVC(random_state=0, tol=1e-5)
+clf = svm.SVC(kernel='linear', C = 1.0)
+
 #for i in range(len(idd)):
 #	X.append([idd[i],pclass[i]])
 #print(X)
@@ -64,7 +63,7 @@ clf = LinearSVC(random_state=0, tol=1e-5)
 
 clf.fit(X,sur)
 X=[]
-l=open(r"D:\Project\kaggle-master\test.csv")
+l=open("/home/saishashank/kaggle/test.csv")
 for i in l:
 	i=i.split(",")
 
@@ -102,7 +101,7 @@ for i in l:
 		#clf.predict([X1])
 		#print("done")
 
-l=open(r"D:\Project\kaggle-master\result30.csv","w", newline='')
+l=open("/home/saishashank/kaggle/result41.csv","w", newline='')
 #print(len(X))
 i=0
 writer = csv.writer(l)
