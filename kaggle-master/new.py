@@ -56,7 +56,6 @@ train['enc_Sex'] = pd.get_dummies(train.Sex, drop_first=True)
 test['enc_Sex'] = pd.get_dummies(test.Sex, drop_first=True)
 
 print ('Encoded: \n')
-print (train.enc_Sex.value_counts())  # Pave and Grvl values converted into 1 and 0
 
 
 train['Embarked']=train['Embarked'].astype('category')
@@ -103,7 +102,7 @@ corr=numeric_features.corr()
 data = train.select_dtypes(include=[np.number]).interpolate().dropna()
 
 
-# Check if the all of the columns have 0 null values.
+
 # sum(data.isnull().sum() != 0)
 print(sum(data.isnull().sum() != 0))
 
